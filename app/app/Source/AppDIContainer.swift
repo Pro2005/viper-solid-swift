@@ -24,7 +24,7 @@ struct AppDIContainer {
         let presenter = TopNewsPresenter(interactor: interactor, router: router)
         let view = TopNewsView(presenter: presenter)
         let viewController = UIHostingController(rootView: view)
-        viewController.tabBarItem = presenter.makeTabBarItem()
+        viewController.tabBarItem = UITabBarItem(image: presenter.inactiveTabBarIcon, selectedImage: presenter.activeTabBarIcon)
         router.screen = view
         presenter.view = view
         return (viewController, router)
@@ -37,7 +37,7 @@ struct AppDIContainer {
         interactor.presenter = presenter
         let view = SearchView(presenter: presenter)
         let viewController = UIHostingController(rootView: view)
-        viewController.tabBarItem = presenter.makeTabBarItem()
+        viewController.tabBarItem = UITabBarItem(image: presenter.inactiveTabBarIcon, selectedImage: presenter.activeTabBarIcon)
         router.screen = view
         presenter.view = view
         return (viewController, router)

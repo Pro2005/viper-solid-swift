@@ -24,8 +24,7 @@ final class MainTabPresenter: MainTabPresenterInput {
     private func createTabs() {
         let news = AppDIContainer.makeTopNewsModule()
         let search = AppDIContainer.makeSearchModule()
-        print(search)
-        view!.presentTabs([news.0, search.0])
+        view.presentTabs([news.0, search.0])
     }
 }
 

@@ -7,6 +7,8 @@
 import UIKit
 
 final class TopNewsPresenter: TopNewsPresenterInput, TopNewsInteractorOutput {
+    var activeTabBarIcon: UIImage { UIImage.activeNewsTab }
+    var inactiveTabBarIcon: UIImage { UIImage.inactiveNewsTab }
     var view: TopNewsPresenterOutput!
     private let interactor: TopNewsInteractorInput
     private let router: TopNewsRouter
@@ -16,9 +18,6 @@ final class TopNewsPresenter: TopNewsPresenterInput, TopNewsInteractorOutput {
         self.router = router
     }
     
-    func makeTabBarItem() -> UITabBarItem {
-        UITabBarItem(title: "Top News", image: UIImage(named: "newsTab"), tag: 0)
-    }
 }
 
 protocol TopNewsPresenterInput {

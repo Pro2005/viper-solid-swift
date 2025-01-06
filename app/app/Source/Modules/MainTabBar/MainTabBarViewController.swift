@@ -24,10 +24,16 @@ class MainTabBarViewController: UITabBarController, MainTabPresenterOutput {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad(view: self)
+        customize()
     }
     
     func presentTabs(_ viewControllers: [UIViewController]) {
         self.viewControllers = viewControllers
+    }
+    
+    private func customize() {
+        tabBar.layer.borderWidth = 0.50
+        tabBar.layer.borderColor = UIColor.inactive.cgColor        
     }
     
 }

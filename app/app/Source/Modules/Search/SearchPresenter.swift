@@ -7,6 +7,8 @@
 import UIKit
 
 final class SearchPresenter: SearchPresenterInput, SearchInteractorOutput {
+    var activeTabBarIcon: UIImage { UIImage.activeSearchTab }
+    var inactiveTabBarIcon: UIImage { UIImage.inactiveSearchTab }
     var view: SearchPresenterOutput!
     private let interactor: SearchInteractorInput
     private let router: SearchRouter
@@ -16,9 +18,6 @@ final class SearchPresenter: SearchPresenterInput, SearchInteractorOutput {
         self.router = router
     }
     
-    func makeTabBarItem() -> UITabBarItem {
-        UITabBarItem(title: "Search", image: UIImage(named: "searchTab"), tag: 0)
-    }
 }
 
 protocol SearchPresenterInput {
